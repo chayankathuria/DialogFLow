@@ -57,8 +57,10 @@ def processRequest(req):
     else:
         log.write_log(sessionID, "Bot Says: " + result.fulfillmentText)
 
-
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
-    print("Starting app on port %d" % port)
-    app.run(debug=False, port=port, host='0.0.0.0')
+    app.run(debug=True)
+    
+#if __name__ == '__main__':
+#    port = int(os.getenv('PORT', 5000))
+#    print("Starting app on port %d" % port)
+#    app.run(debug=False, port=port, host='0.0.0.0')
