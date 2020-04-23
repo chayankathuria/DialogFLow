@@ -9,6 +9,9 @@ from logger import logger
 app = Flask(__name__)
 
 
+@app.route('/')
+def hello():
+    return 'Hello Bot'
 
 # geting and sending response to dialogflow
 @app.route('/webhook', methods=['POST'])
