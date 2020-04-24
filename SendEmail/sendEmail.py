@@ -58,7 +58,7 @@ class EmailSender:
         except Exception as e:
             print('the exception is '+str(e))
 
-    def send_email_to_support(self,cust_name,cust_email,cust_contact,body):
+    def send_email_to_support(self,cust_name,cust_email,cust_contact):
             try:
                 self.config_reader = ConfigReader()
                 self.configuration = self.config_reader.read_config()
@@ -76,9 +76,9 @@ class EmailSender:
                 # string to store the body of the mail
                 # body = "This will contain attachment"
 
-                body = body.replace('cust_name',cust_name)
-                body = body.replace('cust_contact', cust_contact)
-                body = body.replace('cust_email', cust_email)
+                #body = body.replace('cust_name',cust_name)
+                #body = body.replace('cust_contact', cust_contact)
+                #body = body.replace('cust_email', cust_email)
 
                 # attach the body with the msg instance
                 self.msg.attach(MIMEText(body, 'html'))
