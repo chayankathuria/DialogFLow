@@ -14,7 +14,7 @@ class EmailSender:
         host = 'smtp.gmail.com'
         port = 587 
     
-        message = MIMEMultipart()
+        self.msg = MIMEMultipart()
         
         self.msg['From'] = self.configuration['SENDER_EMAIL']
 
@@ -32,7 +32,7 @@ class EmailSender:
         #message['Password']='ck@gmail80'
         body = "Hi You just ordered a Pizza from PizzaBot by Chayan!"
         html_body = MIMEText(body, 'plain')
-        message.attach(html_body)
+        self.msg.attach(html_body)
         username = "chayankathuria"
         passw = 'ck@gmail80'
         conn = smtplib.SMTP(host, port)
@@ -40,6 +40,6 @@ class EmailSender:
         conn.starttls()
         conn.ehlo()
         conn.login(username,passw)    
-        conn.sendmail('chayankathuria@gmail.com',self.msg['To'],message.as_string())
+        conn.sendmail('chayankathuria@gmail.com',self.msg['To'],self.msg.as_string())
         #conn.sendmail(user, receiver, message.as_string())
         conn.quit()
