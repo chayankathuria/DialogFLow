@@ -2,6 +2,7 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
 from config_reader import ConfigReader
 #import pandas as pd
 #import csv
@@ -19,6 +20,8 @@ class EmailSender:
 
         # storing the receivers email address
         self.msg['To'] = ",".join(recepient_email)
+        
+        self.p = MIMEBase('application', 'octet-stream')
 
         # storing the subject
         self.msg['Subject'] = self.configuration['EMAIL_SUBJECT']
