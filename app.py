@@ -2,7 +2,7 @@ from flask import Flask, request, make_response
 import json
 import os
 from flask_cors import cross_origin
-from SendEmail.sendEmail import EmailSender
+from emailer import EmailSender
 from logger import logger
 # from email_templates import template_reader
 
