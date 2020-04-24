@@ -50,8 +50,8 @@ def processRequest(req):
     if (intent=='ContactInfoIntent'):
 
         email_sender=EmailSender()
-        email_message='abcd'
-        email_sender.send_email_to_student(cust_email,email_message)
+        #email_message='abcd'
+        email_sender.send_email_to_student(cust_email)
         email_sender.send_email_to_support(cust_name=cust_name,cust_contact=cust_contact,cust_email=cust_email)
         fulfillmentText="We have sent the course syllabus and other relevant details to you via email. An email has been sent to the Support Team with your contact information, you'll be contacted soon. Do you have further queries?"
         log.write_log(sessionID, "Bot Says: "+fulfillmentText)
