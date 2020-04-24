@@ -29,12 +29,12 @@ class EmailSender:
         #message['To'] = "chayands88@gmail.com"
         #message['From'] = "chayankathuria@gmail.com"
         #message['subject'] = "Test01"
-        #message['Password']='ck@gmail80'
+        #message['Password']=''
         body = "Hi You just ordered a Pizza from PizzaBot by Chayan!"
         html_body = MIMEText(body, 'plain')
         message.attach(html_body)
         username = "chayankathuria"
-        passw = 'ck@gmail80'
+        passw = ''
         conn = smtplib.SMTP(host, port)
         conn.ehlo()
         conn.starttls()
