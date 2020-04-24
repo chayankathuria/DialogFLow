@@ -6,7 +6,7 @@ from config_reader import ConfigReader
 
 class EmailSender:
 
-    def send_email_to_student(self, recepient_email):
+    def send_email_to_student(self, recepient_email, message):
         try:
             self.config_reader=ConfigReader()
             self.configuration=self.config_reader.read_config()
@@ -26,7 +26,7 @@ class EmailSender:
 
             # string to store the body of the mail
             #body = "This will contain attachment"
-            body=self.configuration['EMAIL_BODY']
+            body=message
 
             # attach the body with the msg instance
             self.msg.attach(MIMEText(body, 'html'))
